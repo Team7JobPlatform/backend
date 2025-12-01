@@ -1,16 +1,28 @@
 plugins {
 	id 'java'
+<<<<<<< HEAD
 	id 'org.springframework.boot' version '3.5.7'
 	id 'io.spring.dependency-management' version '1.1.7'
 }
 
 group = 'com.SW'
+=======
+	id 'org.springframework.boot' version '4.0.0'
+	id 'io.spring.dependency-management' version '1.1.7'
+}
+
+group = 'com.example'
+>>>>>>> origin/feature/#2
 version = '0.0.1-SNAPSHOT'
 description = 'Demo project for Spring Boot'
 
 java {
 	toolchain {
+<<<<<<< HEAD
 		languageVersion = JavaLanguageVersion.of(17)
+=======
+		languageVersion = JavaLanguageVersion.of(21)
+>>>>>>> origin/feature/#2
 	}
 }
 
@@ -19,6 +31,7 @@ repositories {
 }
 
 dependencies {
+<<<<<<< HEAD
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
@@ -40,6 +53,20 @@ dependencies {
 >>>>>>> 8b6caea (Initial commit)
 }
 
+=======
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	runtimeOnly 'com.mysql:mysql-connector-j'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+	// Lombok 추가
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+}
+
+
+>>>>>>> origin/feature/#2
 tasks.named('test') {
 	useJUnitPlatform()
 }
