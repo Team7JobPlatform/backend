@@ -1,72 +1,42 @@
 plugins {
-	id 'java'
-<<<<<<< HEAD
-	id 'org.springframework.boot' version '3.5.7'
-	id 'io.spring.dependency-management' version '1.1.7'
-}
-
-group = 'com.SW'
-=======
-	id 'org.springframework.boot' version '4.0.0'
-	id 'io.spring.dependency-management' version '1.1.7'
+    id 'java'
+    id 'org.springframework.boot' version '4.0.0'
+    id 'io.spring.dependency-management' version '1.1.7'
 }
 
 group = 'com.example'
->>>>>>> origin/feature/#2
 version = '0.0.1-SNAPSHOT'
-description = 'Demo project for Spring Boot'
+description = 'JOB'
 
 java {
-	toolchain {
-<<<<<<< HEAD
-		languageVersion = JavaLanguageVersion.of(17)
-=======
-		languageVersion = JavaLanguageVersion.of(21)
->>>>>>> origin/feature/#2
-	}
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
 }
 
 repositories {
-	mavenCentral()
+    mavenCentral()
 }
 
 dependencies {
-<<<<<<< HEAD
-	implementation 'org.springframework.boot:spring-boot-starter-web'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
-<<<<<<< HEAD
-
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-    implementation 'mysql:mysql-connector-java:8.0.33'
-
+    implementation 'org.springframework.boot:spring-boot-starter-webmvc'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
     compileOnly 'org.projectlombok:lombok'
+    runtimeOnly 'com.mysql:mysql-connector-j'
     annotationProcessor 'org.projectlombok:lombok'
-    implementation 'org.springframework.boot:spring-boot-starter-security'
-
-    implementation 'io.jsonwebtoken:jjwt-api:0.11.5'
-    runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.11.5'
-    runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.11.5'
-
-
-=======
->>>>>>> 8b6caea (Initial commit)
+    testImplementation 'org.springframework.boot:spring-boot-starter-data-jpa-test'
+    testImplementation 'org.springframework.boot:spring-boot-starter-webmvc-test'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+    implementation 'com.fasterxml.jackson.core:jackson-databind'
 }
 
-=======
-	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-	implementation 'org.springframework.boot:spring-boot-starter-web'
-	runtimeOnly 'com.mysql:mysql-connector-j'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
-
-	// Lombok 추가
-	compileOnly 'org.projectlombok:lombok'
-	annotationProcessor 'org.projectlombok:lombok'
-}
-
-
->>>>>>> origin/feature/#2
 tasks.named('test') {
-	useJUnitPlatform()
+    useJUnitPlatform()
 }
